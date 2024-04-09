@@ -1,11 +1,8 @@
 # Giza Hackathon — Buenos Aires
 
-## ✨ Census Verifiable
+## ✨ Open Enrollment Market Forecast
 
-The Open Enrollment Period (OEP) is a period that occurs once a year in the USA, during which individuals can enroll in health insurance, adjust their plan, or cancel it.
-In the field of the USA health insurance industry, it is important for insurance agents to have an accurate estimate of the expected number of consumers for the next
-Open Enrollment period, as this would help them gauge the exposed market and thus establish effective strategic planning.
-This is why the idea of creating a linear regression model to forecast expected consumers by county arises, using data from the population estimation conducted
-by the US Census Bureau and data from the previous OEP Market period, to predict the number of individuals who are likely to seek enrollment in health insurance
-plans in a specific geographical region during the next open enrollment period, and thus insurance agents have information that allows them to establish better
-resource planning, customization of marketing strategies, optimize coverage, and thus enhance informed decision-making.
+What problem are you trying to solve?
+The open enrollment process in the US health insurance business presents significant challenges for agents.  One of the main issues is lack of in-advance information about the trendies and expected changes in the market during the following period of registration.  Insurance Agents need to rely on precise and fast indicators in order to take well-informed and strategic decisions for the open enrollment process.
+
+What is your solution to this problem? Our proposed solution is to provide one analytic service that utilizes prediction models offering indicators of the Open Enrollment market in advance and in a precise way.  This service would allow insurance agents to access valuable information related to trendies and expected behavior from consumers, helping them as well to being able to anticipate and adapt themselves proactively to the conditions in the market.
