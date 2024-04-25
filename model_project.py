@@ -6,6 +6,7 @@ from us import states
 import pandas as pd
 import requests
 import zipfile
+import os
 RELATIVE_PATH = f'./data/'
 
 def df_oep(fipscode):
@@ -157,47 +158,42 @@ def population(fipscode):
     df_pop = df_pop[df_pop['County FIPS Code'] == fipscode]
     return df_pop
 
-
-### build population dataframe to county 01001 and oep dataframe
-mdf_pop = population('01001')
-mdf_oep = df_oep('01001')
-### Esto se corre sólo para ver que funcionan las funciones
-
 ### this function build dataframe use on the model
 def build_df(fipscode):
     x = population(fipscode)[['yrs','Population']]
     y = df_oep(fipscode)[['yrs','Cnsmr']]
     y['Cnsmr'] = pd.to_numeric(y['Cnsmr'].astype(str).str.replace(',', ''))
 
-    #x = pd.to_numeric(x1['Population'].astype(str).str.replace(',', ''))
-    #y = pd.to_numeric(y1['Cnsmr'].astype(str).str.replace(',', ''))
     df_model = pd.merge(x, y, on='yrs')
 
     return df_model
 
-## run last function
-df_reg = build_df('01001')
+def build_onnx_model(fipscode, forecast, county):
+    df_reg = build_df(fipscode)
+    ## Ajustar el modelo a los datos del dataframe df_reg
+    model = LinearRegression()
+    x = np.array(df_reg['Population']).reshape(-1, 1)
+    y = df_reg['Cnsmr']
+    model.fit(x, y)    
+    ## Dato para realizar el pronóstico
+    x_proy = np.array([forecast]).reshape(-1, 1)
 
-## Ajustar el modelo a los datos del dataframe df_reg
-model = LinearRegression()
-x = np.array(df_reg['Population']).reshape(-1, 1)
-y = df_reg['Cnsmr']
-model.fit(x, y)
+    model.predict(X = x_proy)
 
-## Dato para realizar el pronóstico
-x_proy = np.array([72281]).reshape(-1, 1)
+    from skl2onnx import convert_sklearn
+    from skl2onnx.common.data_types import FloatTensorType
 
-model.predict(X = x_proy)
+    # Define the initial types for the ONNX model
+    initial_type = [('float_input', FloatTensorType([None, x.shape[1]]))]
 
-from skl2onnx import convert_sklearn
-from skl2onnx.common.data_types import FloatTensorType
+    # Convert the scikit-learn model to ONNX
+    onnx_model = convert_sklearn(model, initial_types=initial_type)    
+    # Save the ONNX model to a file
+    with open(os.path.join('onnx', f'{county}_county.onnx'), "wb") as f:
+        f.write(onnx_model.SerializeToString())
 
-# Define the initial types for the ONNX model
-initial_type = [('float_input', FloatTensorType([None, x.shape[1]]))]
-
-# Convert the scikit-learn model to ONNX
-onnx_model = convert_sklearn(model, initial_types=initial_type)
-
-# Save the ONNX model to a file
-with open("census_lr.onnx", "wb") as f:
-    f.write(onnx_model.SerializeToString())
+build_onnx_model('12007', 30010, 'bradford')
+build_onnx_model('12047', 12910, 'hamilton')
+build_onnx_model('12071', 839320, 'lee')
+build_onnx_model('12075', 48370, 'levy')
+build_onnx_model('12131', 89541, 'walton')
