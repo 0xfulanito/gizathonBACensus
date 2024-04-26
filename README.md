@@ -67,6 +67,13 @@ python levy_county.py
 21:32:48.755 | INFO    | Action run 'radical-jackal' - Predicted value for input 48370.0 is 4103.116638183594
 21:32:48.757 | INFO    | Action run 'radical-jackal' - Proof_id value 5a697415e92c4c18877535208c19d586
 21:32:49.078 | INFO    | Action run 'radical-jackal' - Finished in state Completed()
+walton_county.py
+🚀 Starting deserialization process...
+✅ Deserialization completed! 🎉
+21:33:27.750 | INFO    | Task run 'PredictLRWaltonCounty-0' - Finished in state Completed()
+21:33:27.762 | INFO    | Action run 'massive-fox' - Predicted value for input 89541.0 is 7345.097015380859
+21:33:27.766 | INFO    | Action run 'massive-fox' - Proof_id value d12346f075e341efbd64c06b7631791c
+21:33:28.102 | INFO    | Action run 'massive-fox' - Finished in state Completed()
 ```
 
 - Download the proof
