@@ -20,5 +20,5 @@ With our proposal (and seizing the maturity phase reached by Giza Platform)  we 
 
 
 ## 💖 Acknowledgements
-We extend our appreciation to the author of the tutorial mentioned below, whose valuable insights and guidance greatly influenced this project
+We extend our appreciation to the author of the tutorial mentioned below, whose valuable insights and guidance greatly influenced this project.
 - [Linear Regression | Giza Actions](https://actions.gizatech.xyz/tutorials/traditional-ml-models-for-zkml/linear-regression)
