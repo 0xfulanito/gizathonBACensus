@@ -6,7 +6,7 @@ The open enrollment process in the US health insurance  business, presents signi
 
 Having understood this, our proposal focuses on providing one analytic predictive service that utilizes linear regression models on the open enrollment market of consumers prognosis.
 
-To that end, regression models (fed  off public data of the USA Health department and social services) will be developed.  As for the hackathon purposes, models linked to five counties within the state of Florida will be generated  (they are: Bradford Co, Hamilton Co, Levy Co, and Walton Co).  Upon theses counties, two parameters for the algorithm will be used, they are: Fipscod and expected population for 2025 of each county.  Once the parameters are parsed onto the algorithm, users would obtain the expected number of consumers for the next enrollment period for the county being queried.
+To that end, regression models (fed  off public data of the USA Health department and social services) will be developed.  As for the hackathon purposes, models linked to four counties within the state of Florida will be generated  (they are: Bradford Co, Hamilton Co, Levy Co, and Walton Co).  Upon theses counties, two parameters for the algorithm will be used, they are: Fipscod and expected population for 2024 of each county.  Once the parameters are parsed onto the algorithm, users would obtain the expected number of consumers for the next enrollment period for the county being queried.
 
 In summary, agents will be able to rely on a ML solution, with precise prediction of the enrolling number for the next period, which will enable them with the possibility of:
 
