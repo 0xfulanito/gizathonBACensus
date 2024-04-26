@@ -16,5 +16,9 @@ B) Assigning resources in more effective ways.
 
 C) Adapting their marketing strategies to offer a much better service.
 
+With our proposal (and seizing the maturity phase reached by Giza Platform)  we are aiming to open up the possibility of having a conventional-use ML model being displayed on a trustless and verifiable environment.
 
-With our proposal (and seizing the maturity phase reached by GIZA platform)  we are aiming to open up the possibility of having a conventional-use ML model being displayed on a trustless and verifiable environment.
+
+## 💖 Acknowledgements
+We extend our appreciation to the author of the tutorial mentioned below, whose valuable insights and guidance greatly influenced this project
+- [Linear Regression | Giza Actions](https://actions.gizatech.xyz/tutorials/traditional-ml-models-for-zkml/linear-regression)
