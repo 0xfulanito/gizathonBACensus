@@ -194,6 +194,5 @@ def build_onnx_model(fipscode, forecast, county):
 
 build_onnx_model('12007', 30010, 'bradford')
 build_onnx_model('12047', 12910, 'hamilton')
-build_onnx_model('12071', 839320, 'lee')
 build_onnx_model('12075', 48370, 'levy')
 build_onnx_model('12131', 89541, 'walton')
